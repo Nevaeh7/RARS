@@ -1,0 +1,64 @@
+{
+  "locales": [
+    "us",
+    "es",
+    "jp"
+  ],
+  "seeds": [
+    2020,
+    2021,
+    2022,
+    2023,
+    2024
+  ],
+  "embedding_models": {
+    "us": "google-bert/bert-base-uncased",
+    "es": "google-bert/bert-base-multilingual-cased",
+    "jp": "google-bert/bert-base-multilingual-cased"
+  },
+  "backbones": {
+    "us": "google-t5/t5-base",
+    "es": "google/mt5-base",
+    "jp": "google/mt5-base"
+  },
+  "embedding_batch_size": 64,
+  "tokenization": {
+    "epochs": 300,
+    "batch_size": 2048,
+    "learning_rate": 0.001,
+    "code_dim": 32,
+    "layers": [
+      4096,
+      2048,
+      1024,
+      512,
+      256,
+      128,
+      64
+    ],
+    "collision_refinements": 20,
+    "seed": 42
+  },
+  "gr": {
+    "epochs": 300,
+    "batch_size": 512,
+    "gradient_accumulation": 1,
+    "learning_rate": 0.0005,
+    "base_weight": 0.1,
+    "tree_weight": 0.5,
+    "tree_rank": 64,
+    "sibling_negatives": 32,
+    "max_length": 512,
+    "validation_fraction": 0.1,
+    "bf16": true
+  },
+  "retrieval": {
+    "beam_size": 100,
+    "category_width": 3,
+    "compatibility_weight": 2.0,
+    "lexical_features": 2,
+    "lexical_weight": 0.25,
+    "max_lexical_df_ratio": 0.02,
+    "query_protocol": "released"
+  }
+}
