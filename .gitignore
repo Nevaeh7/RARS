@@ -7,6 +7,8 @@ __pycache__/
 build/
 dist/
 .DS_Store
+*.zip
+/README_zh-CN.md
 artifacts/
 raw/
 models/
